@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f5d915e7-a625-4e2f-8fca-5977471d71db" name="Changes" comment="refactor project, added homework streams" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2eapmhwCtTXRt1mPSMxl9pk8Rpy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.MyArrayListTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.aston-assignments [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.aston-assignments [:PuttingIntoPractice.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="open Lists" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="PuttingIntoPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aston.code.lesson5.PuttingIntoPractice" />
+      <module name="aston-assignments.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aston.code.lesson5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PuttingIntoPractice" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-76dd8dae" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5d915e7-a625-4e2f-8fca-5977471d71db" name="Changes" comment="" />
+      <created>1712152703455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712152703455</updated>
+      <workItem from="1712152704415" duration="559000" />
+      <workItem from="1712153278471" duration="3418000" />
+      <workItem from="1712156705493" duration="4480000" />
+      <workItem from="1712161197239" duration="13000" />
+      <workItem from="1712161227179" duration="197000" />
+      <workItem from="1712161441064" duration="7802000" />
+      <workItem from="1712209566595" duration="786000" />
+      <workItem from="1712210372360" duration="6000" />
+      <workItem from="1712210498204" duration="2786000" />
+      <workItem from="1712219984468" duration="29000" />
+    </task>
+    <task id="LOCAL-00001" summary="submit collections assignment">
+      <option name="closed" value="true" />
+      <created>1712208546572</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712208546572</updated>
+    </task>
+    <task id="LOCAL-00002" summary="submit collections assignment">
+      <option name="closed" value="true" />
+      <created>1712208594110</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712208594110</updated>
+    </task>
+    <task id="LOCAL-00003" summary="del idea from repo">
+      <option name="closed" value="true" />
+      <created>1712208826379</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712208826379</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor project, added homework streams">
+      <option name="closed" value="true" />
+      <created>1712213280507</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712213280507</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="submit collections assignment" />
+    <MESSAGE value="del idea from repo" />
+    <MESSAGE value="refactor project, added homework streams" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor project, added homework streams" />
+  </component>
+</project>

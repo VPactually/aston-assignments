@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="aston.tests.MyArrayListTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-04-04T05:20:17" hostname="G15-5515" time="0.078">
+  <properties/>
+  <testcase name="testAdd()" classname="aston.tests.MyArrayListTest" time="0.054"/>
+  <testcase name="testGet()" classname="aston.tests.MyArrayListTest" time="0.005"/>
+  <testcase name="testSort()" classname="aston.tests.MyArrayListTest" time="0.001"/>
+  <testcase name="testStaticSort()" classname="aston.tests.MyArrayListTest" time="0.006"/>
+  <testcase name="testAddAll()" classname="aston.tests.MyArrayListTest" time="0.001"/>
+  <testcase name="testRemove()" classname="aston.tests.MyArrayListTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
