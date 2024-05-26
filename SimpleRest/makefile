@@ -1,7 +1,7 @@
 build:
-	sudo ./gradlew build
+	gradlew build
 
 report:
-	sudo ./gradlew jacocoTestReport
+	gradlew jacocoTestReport
 
 .PHONY: build
