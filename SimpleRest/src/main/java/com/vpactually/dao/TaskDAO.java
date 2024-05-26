@@ -2,6 +2,7 @@ package com.vpactually.dao;
 
 import com.vpactually.entities.Task;
 import com.vpactually.util.ConnectionManager;
+import com.vpactually.util.FetchType;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,6 +52,7 @@ public class TaskDAO implements DAO<Integer, Task> {
             while (resultSet.next()) {
                 var task = buildTask(resultSet);
                 task.setAssignee(USER_DAO.findById(resultSet.getInt("user_id")).orElseThrow());
+                task.getAssignee().setFetchType(FetchType.LAZY);
                 tasks.add(task);
             }
         } catch (SQLException e) {
@@ -68,6 +70,7 @@ public class TaskDAO implements DAO<Integer, Task> {
             if (resultSet.next()) {
                 task = buildTask(resultSet);
                 task.setAssignee(USER_DAO.findById(resultSet.getInt("user_id")).orElseThrow());
+                task.getAssignee().setFetchType(FetchType.LAZY);
             }
         } catch (SQLException e) {
             e.fillInStackTrace();
@@ -89,6 +92,7 @@ public class TaskDAO implements DAO<Integer, Task> {
             while (resultSet.next()) {
                 task.setId(resultSet.getInt(1));
             }
+            task.setFetchType(FetchType.EAGER);
             saveTaskLabels(task);
         } catch (SQLException e) {
             e.fillInStackTrace();
@@ -106,6 +110,7 @@ public class TaskDAO implements DAO<Integer, Task> {
             preparedStatement.setObject(5, task.getId());
             preparedStatement.executeUpdate();
             saveTaskLabels(task);
+
         } catch (SQLException e) {
             e.fillInStackTrace();
         }

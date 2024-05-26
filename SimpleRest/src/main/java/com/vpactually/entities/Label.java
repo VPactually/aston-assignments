@@ -1,5 +1,7 @@
 package com.vpactually.entities;
 
+import com.vpactually.dao.LabelDAO;
+import com.vpactually.util.FetchType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,14 +18,22 @@ public class Label implements BaseEntity{
     private String name;
     private LocalDate createdAt;
     private Set<Task> tasks = new HashSet<>();
+    private FetchType fetchType = FetchType.LAZY;
 
     public Label(Integer id) {
         this.id = id;
     }
 
+    public Label(Integer id, String name, LocalDate createdAt, Set<Task> tasks) {
+        this.id = id;
+        this.name = name;
+        this.createdAt = createdAt;
+        this.tasks = tasks;
+    }
+
     public Set<Task> getTasks() {
-        if (tasks == null) {
-            tasks = new HashSet<>();
+        if (fetchType.equals(FetchType.EAGER)) {
+            tasks = LabelDAO.getInstance().findTasksByLabelId(id);
         }
         return tasks;
     }

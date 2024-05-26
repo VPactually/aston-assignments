@@ -8,11 +8,11 @@ import org.testcontainers.containers.JdbcDatabaseContainer;
 
 import java.sql.SQLException;
 
-import static com.vpactually.util.DataUtil.*;
+import static com.vpactually.util.DataUtil.ANOTHER_TASK;
+import static com.vpactually.util.DataUtil.EXISTING_TASK;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TaskDAOTests {
-
 
     private static final TaskDAO TASK_DAO = TaskDAO.getInstance();
 
@@ -30,7 +30,8 @@ public class TaskDAOTests {
 
     @Test
     void testFindAll() {
-        assertThat(TASK_DAO.findAll()).contains(EXISTING_TASK);
+        var task = EXISTING_TASK;
+        assertThat(TASK_DAO.findAll()).contains(task);
     }
 
     @Test
@@ -48,8 +49,8 @@ public class TaskDAOTests {
     void testUpdate() {
         var updatedTask = ANOTHER_TASK;
         updatedTask.setId(1);
-        TASK_DAO.update(updatedTask);
-        assertThat(TASK_DAO.findById(1).get()).isEqualTo(updatedTask);
+        updatedTask = TASK_DAO.update(updatedTask);
+        assertThat(TASK_DAO.findById(updatedTask.getId()).get()).isEqualTo(updatedTask);
     }
 
     @Test

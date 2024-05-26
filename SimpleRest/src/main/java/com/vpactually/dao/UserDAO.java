@@ -66,10 +66,8 @@ public class UserDAO implements DAO<Integer, User> {
             preparedStatement.setObject(3, user.getPassword());
             preparedStatement.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
             preparedStatement.executeUpdate();
-            if (user.getTasks() != null) {
-                user.setFetchType(FetchType.EAGER);
-                TASK_DAO.saveUserTasks(user.getTasks(), user.getId());
-            }
+            user.setFetchType(FetchType.EAGER);
+            TASK_DAO.saveUserTasks(user.getTasks(), user.getId());
             var generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
                 user.setId(generatedKeys.getInt(1));
@@ -88,9 +86,7 @@ public class UserDAO implements DAO<Integer, User> {
             preparedStatement.setObject(3, user.getPassword());
             preparedStatement.setObject(4, user.getId());
             preparedStatement.executeUpdate();
-            if (user.getTasks() != null) {
-                TASK_DAO.saveUserTasks(user.getTasks(), user.getId());
-            }
+            TASK_DAO.saveUserTasks(user.getTasks(), user.getId());
         } catch (SQLException e) {
             e.fillInStackTrace();
         }
