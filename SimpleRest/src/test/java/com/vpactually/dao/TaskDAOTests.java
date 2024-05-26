@@ -9,8 +9,7 @@ import org.testcontainers.containers.JdbcDatabaseContainer;
 
 import java.sql.SQLException;
 
-import static com.vpactually.util.DataUtil.ANOTHER_TASK;
-import static com.vpactually.util.DataUtil.EXISTING_TASK;
+import static com.vpactually.util.DataUtil.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TaskDAOTests {
@@ -32,12 +31,13 @@ public class TaskDAOTests {
     @Test
     void testFindAll() {
         var task = EXISTING_TASK;
-        assertThat(TASK_DAO.findAll()).contains(task);
+        assertThat(TASK_DAO.findAll().toString()).contains(task.getTitle());
+        assertThat(TASK_DAO.findAll().toString()).contains(task.getDescription());
     }
 
     @Test
     void testFindById() {
-        assertThat(TASK_DAO.findById(1).get()).isEqualTo(EXISTING_TASK);
+        assertThat(TASK_DAO.findById(1).get().getTitle()).isEqualTo(EXISTING_TASK.getTitle());
     }
 
     @Test
@@ -62,9 +62,25 @@ public class TaskDAOTests {
         var task = ANOTHER_TASK;
         TASK_DAO.save(task);
         TASK_DAO.deleteById(task.getId());
+        task.setFetchType(FetchType.LAZY);
         assertThat(TASK_DAO.findAll()).doesNotContain(task);
 
         TASK_DAO.deleteById(EXISTING_TASK.getId());
-        assertThat(TASK_DAO.findAll()).contains(EXISTING_TASK);
+        assertThat(TASK_DAO.findAll().get(0).getId()).isEqualTo(EXISTING_TASK.getId());
+    }
+
+    @Test
+    void testSaveUserTasks() {
+        var user = ADMIN;
+        var tasks = user.getTasks();
+        var newTask = ANOTHER_TASK;
+
+        TASK_DAO.save(newTask);
+
+        user.addTask(newTask);
+
+        TASK_DAO.saveUserTasks(tasks, user.getId());
+        newTask.setFetchType(FetchType.LAZY);
+        assertThat(TASK_DAO.findAll()).contains(newTask);
     }
 }

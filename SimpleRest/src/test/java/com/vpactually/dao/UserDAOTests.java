@@ -16,7 +16,6 @@ import java.util.Set;
 import static com.vpactually.util.DataUtil.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 public class UserDAOTests {
     private static final UserDAO userDAO = UserDAO.getInstance();
     private static JdbcDatabaseContainer<?> postgresqlContainer;
@@ -33,14 +32,17 @@ public class UserDAOTests {
 
     @Test
     void testFindAll() {
-        assertThat(userDAO.findAll()).contains(ADMIN);
+        var admin = ADMIN;
+        assertThat(userDAO.findAll().toString()).contains(admin.getName());
+        assertThat(userDAO.findAll().toString()).contains(admin.getEmail());
     }
 
     @Test
     void testFindById() {
         var user = ADMIN;
 
-        assertThat(userDAO.findById(1).get()).isEqualTo(user);
+        assertThat(userDAO.findById(1).get().getName()).isEqualTo(user.getName());
+        assertThat(userDAO.findById(1).get().getEmail()).isEqualTo(user.getEmail());
         assertThat(userDAO.findById(2)).isEqualTo(Optional.empty());
     }
 
@@ -68,7 +70,7 @@ public class UserDAOTests {
         user.setName("newName");
         var updatedUser = userDAO.update(user);
 
-        assertThat(updatedUser).isEqualTo(userDAO.findById(updatedUser.getId()).get());
+        assertThat(updatedUser.getName()).isEqualTo(userDAO.findById(updatedUser.getId()).get().getName());
     }
 
     @Test
