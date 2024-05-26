@@ -39,7 +39,6 @@ public class UserDAOTests {
     @Test
     void testFindById() {
         var user = ADMIN;
-        user.setFetchType(FetchType.EAGER);
 
         assertThat(userDAO.findById(1).get()).isEqualTo(user);
         assertThat(userDAO.findById(2)).isEqualTo(Optional.empty());
@@ -65,8 +64,8 @@ public class UserDAOTests {
 
     @Test
     void testUpdate() {
-        var user = ANOTHER_USER;
-        user.setId(1);
+        var user = ADMIN;
+        user.setName("newName");
         var updatedUser = userDAO.update(user);
 
         assertThat(updatedUser).isEqualTo(userDAO.findById(updatedUser.getId()).get());

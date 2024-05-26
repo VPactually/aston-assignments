@@ -87,6 +87,7 @@ public class UserDAO implements DAO<Integer, User> {
             preparedStatement.setObject(4, user.getId());
             preparedStatement.executeUpdate();
             TASK_DAO.saveUserTasks(user.getTasks(), user.getId());
+            user.setFetchType(FetchType.LAZY);
         } catch (SQLException e) {
             e.fillInStackTrace();
         }
