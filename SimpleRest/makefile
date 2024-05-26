@@ -1,7 +1,7 @@
 build:
-	gradlew build
+	./gradlew build
 
 report:
-	gradlew jacocoTestReport
+	./gradlew jacocoTestReport
 
 .PHONY: build
