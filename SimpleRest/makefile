@@ -1,4 +1,5 @@
 build:
+    chmod +x ./gradlew
 	./gradlew build
 
 report:
