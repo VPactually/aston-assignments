@@ -1,7 +1,7 @@
 build:
-	cd SimpleRest && ./gradlew build
+	./gradlew build
 
 report:
-	cd SimpleRest && ./gradlew jacocoTestReport
+	./gradlew jacocoTestReport
 
 .PHONY: build

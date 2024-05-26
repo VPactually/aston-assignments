@@ -14,12 +14,12 @@ jobs:
         with:
           gradle-version: 8.6
       - name: Make build
-        run: make build
+        run: cd SimpleRest && make build
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
           JACOCO_SOURCE_PATH: SimpleRest/src/main/java
         with:
-          coverageCommand: make report
+          coverageCommand: cd SimpleRest && make report
           coverageLocations: ${{github.workspace}}/SimpleRest/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
