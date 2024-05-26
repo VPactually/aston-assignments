@@ -1,6 +1,7 @@
 package com.vpactually.dao;
 
 import com.vpactually.util.ContainerUtil;
+import com.vpactually.util.FetchType;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -50,7 +51,10 @@ public class TaskDAOTests {
         var updatedTask = ANOTHER_TASK;
         updatedTask.setId(1);
         updatedTask = TASK_DAO.update(updatedTask);
-        assertThat(TASK_DAO.findById(updatedTask.getId()).get()).isEqualTo(updatedTask);
+        updatedTask.setFetchType(FetchType.LAZY);
+        var actual = TASK_DAO.findById(updatedTask.getId()).get();
+
+        assertThat(actual).isEqualTo(updatedTask);
     }
 
     @Test

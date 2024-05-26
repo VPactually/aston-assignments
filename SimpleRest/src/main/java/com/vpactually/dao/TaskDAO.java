@@ -109,8 +109,8 @@ public class TaskDAO implements DAO<Integer, Task> {
             preparedStatement.setObject(4, task.getAssignee().getId());
             preparedStatement.setObject(5, task.getId());
             preparedStatement.executeUpdate();
+            task.setFetchType(FetchType.EAGER);
             saveTaskLabels(task);
-
         } catch (SQLException e) {
             e.fillInStackTrace();
         }

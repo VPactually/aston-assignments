@@ -50,7 +50,7 @@ public class UserDAO implements DAO<Integer, User> {
             var resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = buildUser(resultSet);
-                user.setFetchType(FetchType.EAGER);
+                user.setFetchType(FetchType.LAZY);
             }
         } catch (SQLException e) {
             e.fillInStackTrace();
