@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'war'
     id 'jacoco'
+    id 'application'
 }
 
 group 'com.vpactually'
@@ -9,6 +10,10 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+application {
+    mainClass.set("com.vpactually.AppApplication")
 }
 
 ext {
