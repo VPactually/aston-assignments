@@ -1,8 +1,8 @@
 build:
-	@cd SimpleRest && chmod +x gradlew
-	@cd SimpleRest && ./gradlew build
+	@chmod +x gradlew
+	@./gradlew build
 
 report:
-	@cd SimpleRest && ./gradlew jacocoTestReport
+	@./gradlew jacocoTestReport
 
 .PHONY: build
